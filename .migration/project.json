@@ -1,0 +1,10 @@
+{
+  "type": "da",
+  "sites": {
+    "ema": {
+      "previewOrg": "akki761",
+      "previewSite": "ema",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}
