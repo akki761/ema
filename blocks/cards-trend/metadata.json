@@ -1,0 +1,44 @@
+{
+  "variantName": "cards-trend",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-09-02T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site/fashion-trends-young-adults-casual-sport",
+    "originPage": "trends-landing page ('Trend Alert' section)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "trend-list",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid of linked cards (image + category tag + heading + description)",
+    "buttonCount": 0,
+    "imageCount": 8,
+    "itemCount": 8,
+    "hasTag": true,
+    "hasDescription": true,
+    "hasDate": false
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "categorized trend/topic card grids with a category label, heading and descriptive copy",
+      "linked content teasers that pair a tag with a multi-line description (no date)"
+    ],
+    "notSuitableFor": [
+      "article/blog cards showing a publish date and title only (use cards-article)",
+      "image-only photo galleries (use cards-gallery)",
+      "side-by-side feature layouts (use columns-feature)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/fashion-trends-young-adults-casual-sport"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-02T00:00:00.000Z"
+  }
+}
