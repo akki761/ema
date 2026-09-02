@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-article",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-09-02T18:14:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site/blog/ace-pro-court-polo",
+    "originPage": "article-detail (blog post)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "article-header",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "cover image + breadcrumb + headline + byline + date/read-time + category tag",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "blog / article detail page title headers",
+      "editorial headers pairing a cover image with breadcrumb, byline, publish date, read time and a category tag",
+      "long-form content page intros with no CTA buttons"
+    ],
+    "notSuitableFor": [
+      "landing-page intros with dual CTAs and an image cluster (use hero-intro)",
+      "dark full-bleed background-image CTA banners (use hero-banner)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/blog/ace-pro-court-polo"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-02T18:14:00.000Z"
+  }
+}
