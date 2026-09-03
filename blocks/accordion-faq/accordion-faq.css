@@ -1,61 +1,76 @@
-.accordion-faq details {
-  border: 1px solid #dadada;
+/* accordion-faq — FAQ accordion. Values extracted from source computed styles. */
+
+/* container: vertical list of rounded row cards */
+.accordion-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-.accordion-faq details + details {
-  margin-top: 24px;
+/* item card */
+.accordion-faq .accordion-faq-item {
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  background-color: transparent;
 }
 
-.accordion-faq details p {
-  margin-bottom: 0.8em;
-}
-
-.accordion-faq details summary {
-  position: relative;
-  padding: 0 16px;
-  padding-right: 46px;
+/* question row (clickable) */
+.accordion-faq .accordion-faq-item-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 32px;
   cursor: pointer;
   list-style: none;
-  overflow: auto;
-  transition: background-color 0.2s;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-color);
+  text-transform: none;
+  letter-spacing: normal;
 }
 
-.accordion-faq details[open] summary {
-  background-color: var(--light-color);
-}
-
-.accordion-faq details summary:focus,
-.accordion-faq details summary:hover {
-  background-color: var(--light-color);
-}
-
-.accordion-faq details summary::-webkit-details-marker {
+.accordion-faq .accordion-faq-item-label::-webkit-details-marker {
   display: none;
 }
 
-.accordion-faq details summary::after {
+/* remove default paragraph margins inside question/answer */
+.accordion-faq .accordion-faq-item-label p {
+  margin: 0;
+}
+
+/* plus / minus icon (20x20, 2px strokes, currentColor) */
+.accordion-faq .accordion-faq-item-label::after {
   content: '';
-  position: absolute;
-  top: 50%;
-  right: 18px;
-  transform: translateY(-50%) rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid;
-  border-width: 2px 2px 0 0;
-  transition: transform 0.2s;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+
+  /* horizontal bar (always visible) + vertical bar (hidden when open) */
+  background:
+    linear-gradient(currentcolor, currentcolor) center / 20px 2px no-repeat,
+    linear-gradient(currentcolor, currentcolor) center / 2px 20px no-repeat;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
 }
 
-.accordion-faq details[open] summary::after {
-  transform: translateY(-50%) rotate(-45deg);
+/* open state: hide the vertical bar to form a minus */
+.accordion-faq .accordion-faq-item[open] .accordion-faq-item-label::after {
+  background:
+    linear-gradient(currentcolor, currentcolor) center / 20px 2px no-repeat;
 }
 
-.accordion-faq details .accordion-faq-item-body {
-  padding: 0 16px;
+/* answer body */
+.accordion-faq .accordion-faq-item-body {
+  padding: 0 32px 32px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #404040;
 }
 
-.accordion-faq details[open] .accordion-faq-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
+.accordion-faq .accordion-faq-item-body p {
+  margin: 0;
 }

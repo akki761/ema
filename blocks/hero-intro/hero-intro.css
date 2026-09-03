@@ -1,47 +1,89 @@
-.hero-intro-container .hero-intro-wrapper {
-  max-width: unset;
-  padding: 0;
+/* hero-intro — intro hero: headline + subheading + 2 pill CTAs (left),
+   cluster of 3 rounded images (right).
+   Values extracted from https://wknd-trendsetters.site/ computed styles. */
+
+/* Section band: secondary grey, full-width, generous vertical rhythm.
+   Scoped to this block's section container so it renders correctly even
+   when the shared section-metadata "secondary" style is unavailable. */
+.hero-intro-container {
+  margin: 0;
+  padding: 64px 0;
+  background-color: var(--secondary-bg);
 }
 
+/* Block layout — mobile first: single column, text above images */
 .hero-intro {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.hero-intro h1,
-.hero-intro h2,
-.hero-intro h3,
-.hero-intro h4,
-.hero-intro h5,
-.hero-intro h6,
-.hero-intro p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+.hero-intro-content {
+  order: 1;
 }
 
-.hero-intro.no-image * {
+.hero-intro-images {
+  order: 2;
+}
+
+/* --- Text column --- */
+.hero-intro-content h1 {
+  margin: 0;
+  letter-spacing: -0.02em; /* source: -1.12px @ 56px */
+}
+
+.hero-intro-content p {
+  margin-top: 24px;
+  margin-bottom: 0;
   color: var(--text-color);
 }
 
-.hero-intro picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+.hero-intro-content .button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
 }
 
-.hero-intro img {
-  object-fit: cover;
+/* CTAs are promoted to pill buttons in JS; reuse global a.button styles. */
+.hero-intro-content .button-group a.button {
+  margin: 0;
+}
+
+/* --- Image cluster --- */
+
+/* The 3 pictures live inside a single <p> (EDS wraps bare images). */
+.hero-intro-images p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+
+.hero-intro-images picture {
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 3 / 2;
+}
+
+.hero-intro-images img {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
+/* --- Desktop: two-column grid, content left / images right --- */
 @media (width >= 900px) {
+  .hero-intro-container {
+    padding: var(--section-padding) 0;
+  }
+
   .hero-intro {
-    padding: 40px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
   }
 }

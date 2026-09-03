@@ -1,10 +1,11 @@
+/* columns-feature — case-study teaser: rounded image + heading/byline, side-by-side.
+   Values extracted from wknd-trendsetters.site (computed styles). */
+
+/* Mobile-first: single column, image on top */
 .columns-feature > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns-feature img {
-  width: 100%;
+  gap: 24px;
 }
 
 .columns-feature > div > div {
@@ -15,19 +16,44 @@
   order: 0;
 }
 
-.columns-feature > div > .columns-feature-img-col img {
+/* rounded, 3:2 cover image */
+.columns-feature img {
   display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* heading — Syncopate uppercase (from brand tokens); tighten margins */
+.columns-feature h2 {
+  margin: 0;
+  font-size: var(--heading-font-size-xl); /* 40px desktop */
+  line-height: 1.1;
+}
+
+/* byline + date — small secondary text */
+.columns-feature p {
+  margin: 8px 0 0;
+  font-size: var(--body-font-size-xs); /* 14px */
+  line-height: 1.6;
+  color: rgb(102 102 102);
+}
+
+.columns-feature h2 + p {
+  margin-top: 16px;
 }
 
 @media (width >= 900px) {
   .columns-feature > div {
+    flex-direction: row;
     align-items: center;
-    flex-direction: unset;
     gap: 24px;
   }
 
   .columns-feature > div > div {
     flex: 1;
     order: unset;
+    min-width: 0;
   }
 }
