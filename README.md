@@ -1,6 +1,5 @@
 # Your Project's Title
-Your project's description...
-
+Your project's description
 ## Environments
 - Preview: https://main--{repo}--{owner}.aem.page/
 - Live: https://main--{repo}--{owner}.aem.live/
